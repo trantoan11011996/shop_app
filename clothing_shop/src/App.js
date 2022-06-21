@@ -1,19 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import { ListGroup } from 'react-bootstrap';
+import ShoppApp from './component/ShopApp';
 
 function App() {
   return (
     <div className="App">
-      <ListGroup.Item>
-        hiiii
-      </ListGroup.Item>
-      <ListGroup.Item>
-        hiiii
-      </ListGroup.Item>
-      <ListGroup.Item>
-        hiiii
-      </ListGroup.Item>
+      <ShoppApp/>
     </div>
   );
 }
