@@ -1,9 +1,7 @@
 .header_app{
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    background-color: transparent;
+    position: relative;
+    z-index: 1000000;
+    background-color:  transparent;
     border-bottom: 1px solid rgb(185, 185, 185);
 }
 .nav_header{
@@ -19,6 +17,11 @@
     align-items: center;
     flex-direction: row;
     gap: 10px;
+    text-decoration: none;
+    color: black;
+}
+.header_logo:hover{
+    color: black;
 }
 .header_logo>h1{
     font-size: 40px;
@@ -40,8 +43,13 @@
     margin-right: 10px;
 }
 .nav_link{
+    text-decoration: none;
     color: black;
     outline: none;
+}
+.link{
+    display: flex;
+    gap: 20px;
 }
 .nav_link:hover{
     color: black;
@@ -49,21 +57,24 @@
 }
 
 .bg_home-first{
+    position: relative;
+    top: -110px;
     background-image: url('https://wallpapercave.com/wp/wp2153676.jpg');
     height: 1000px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    animation: show_bg ease-in-out 0.5s;
+    animation: show_bg ease-in-out 1.5s;
 }
 .bg_home-sec{
+    position: relative;
+    top: -30px;
     background-image: url('https://wallpapercave.com/dwp1x/wp2153640.jpg');
     height: 800px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 50px;
-    animation: show_bg ease-in-out 0.5s;
+    animation: show_bg ease-in-out 2s;
 }
 .header_app:hover{
    background-color: white;
@@ -99,6 +110,7 @@
 }
 .footer_home{
     background-color: #e0e2e4;
+    padding-bottom: 30px;
 }
 .footer{
     margin-top: 50px;
@@ -136,7 +148,7 @@
     top: 0;
     bottom: 0;
     transform: translateX(100%);
-    animation: close_side-cart ease-in-out 0.5s;
+    z-index: 2000000;
 }
 .show_side-cart{
     height: 100%;
@@ -147,6 +159,7 @@
     top: 0;
     bottom: 0;
     animation: show_side-cart ease-in-out 0.5s;
+    z-index: 2000000;
 }
 @keyframes show_side-cart{
     from{
@@ -179,4 +192,7 @@
     margin-right: 30px;
     font-size: 20px;
     cursor: pointer;
+}
+.display-none{
+    display: none;
 }

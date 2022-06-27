@@ -1,0 +1,37 @@
+.about-section{
+    margin-top: 35px;
+}
+.about-container>h1{
+    text-align: center;
+}
+.about-intro-header{
+    margin-top: 20px;
+}
+.intro-1{
+    font-size: 15px;
+}
+.intro-2{
+    margin-top: 15px;
+    font-size: 15px;
+}
+.about-img{
+    margin-top: 28px;
+}
+.img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.img>b{
+    font-size: 14px;
+}
+.about-footer{
+    margin-top: 10px;
+}
+mark{
+    background-color: white;
+    border: none;
+    font-weight: 550 ;
+}

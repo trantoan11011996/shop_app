@@ -4,38 +4,51 @@ import "../css/home.css"
 import { BsSearch } from "react-icons/bs"
 import { FiShoppingCart } from "react-icons/fi"
 import { FaRegCopyright } from "react-icons/fa"
-import {AiOutlineClose} from "react-icons/ai"
+import { AiOutlineClose } from "react-icons/ai"
+import { useParams, Link, NavLink } from "react-router-dom";
+import Modalsearch from "./Modalsearch";
 export default function Header() {
     const [sideCart, setSideCart] = useState(false)
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => {
+        setShow(false);
+    }
+    const handleShow = () => {
+        setShow(true);
+    }
+
+
 
     const openSideCart = () => {
         setSideCart(!sideCart)
-        console.log('alo')
+        console.log('open')
     }
     const closeSideCart = () => {
         setSideCart(!sideCart)
-        console.log('alo')
+        console.log('close')
     }
     return (
         <>
+        <div className={show ? "header display-none" : "header"}>
             <div className="header_app">
                 <Container fluid>
                     <Row>
                         <Col md={3} sm={4}>
                         </Col>
                         <Col className='nav_header' md={6} sm={4}>
-                            <div className="header_logo">
+                            <Link className="header_logo" to="/">
                                 <h1>TUMS</h1>
                                 <FaRegCopyright className="icon_logo"></FaRegCopyright>
-                            </div>
-                            <Nav>
-                                <Nav.Link className="nav_link" href="#home">HOME</Nav.Link>
-                                <Nav.Link className="nav_link" href="#link">STORE</Nav.Link>
-                                <Nav.Link className="nav_link" href="#home">ABOUT US</Nav.Link>
+                            </Link>
+                            <Nav className="link">
+                                <Link className="nav_link" to="/">HOME</Link>
+                                <Link className="nav_link" to="/allproduct">STORE</Link>
+                                <Link className="nav_link" to="/about">ABOUT US</Link>
                             </Nav>
                         </Col>
                         <Col className="search_cart" md={3} sm={4}>
-                            <div className="search_home">
+                            <div className="search_home" onClick={handleShow}>
                                 <BsSearch></BsSearch>
                             </div>
                             <div className="cart_home" onClick={openSideCart}>
@@ -55,6 +68,8 @@ export default function Header() {
                     <AiOutlineClose className="close_sidebar" onClick={closeSideCart}></AiOutlineClose>
                 </div>
             </div>
+        </div>
+            <Modalsearch handleClose={handleClose} handleShow={handleShow} show={show} />
         </>
 
     )

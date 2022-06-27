@@ -1,0 +1,27 @@
+.header>h1{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 35px;
+}
+.filter-product{
+    margin-top: 35px;
+}
+.product-field{
+    margin-top: 50px;
+}
+.product-name{
+    margin-top: 20px;
+    font-weight: 550;
+}
+.btn-loadmore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+.btn{
+    padding: 8px 20px 8px 20px;
+}
+.img-product:hover{
+   cursor: pointer;
+}
