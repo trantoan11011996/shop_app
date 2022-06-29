@@ -25,3 +25,23 @@
 .img-product:hover{
    cursor: pointer;
 }
+.item{
+    margin-bottom: 30px;
+    animation: show_item ease-in-out 1.5s;
+}
+.item:hover .product-name,
+.item:hover .product-price{
+    color: black;
+}
+@keyframes show_item{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.link-item{
+    text-decoration: none;
+    color: black;
+}
