@@ -395,7 +395,7 @@ GetData()
 export function getAllProduct(){
     const data = GetData()
     let allProduct = [] 
-    const product = data.map((item)=>{
+    let product = data.map((item)=>{
         return item.list_item.map((itemProduct)=>{
             allProduct.push(itemProduct)
         })
@@ -408,7 +408,27 @@ export function getAllProductFormLocal(){
 }
 
 export function getItem(itemName){
-    const item = getAllProductFormLocal()
+    let item = getAllProductFormLocal()
     return item.find(item=>item.product == itemName)
 }
+export function getItembyCate (itemCate){
+    if(itemCate === "All"){
+        let data = getAllProductFormLocal()
+        localStorage.setItem('productByCate',JSON.stringify(data))
+        return data
+    }
+    let data = GetData()
+    let filterbyCate = data.filter(item=>item.cate == itemCate)
+    let product = filterbyCate[0].list_item
+    localStorage.setItem('productByCate',JSON.stringify(product))
+    return product
+}
+
+export function getProductFormLocal(){
+    let json = localStorage.getItem('productByCate')
+    return !json ? [] : JSON.parse(json)
+}
+
+
+
 

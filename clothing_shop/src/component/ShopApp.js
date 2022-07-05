@@ -9,6 +9,7 @@ import Header from "./Header";
 import Homepage from "./Homepage";
 import Modalsearch from "./Modalsearch";
 import ProductPageAll from "./ProductPageAll";
+import ProductPage from "./ProductPage";
 import { getAllProduct, getAllProductFormLocal, GetData } from "./data";
 import ItemDetail from "./ItemDetail";
 
@@ -38,18 +39,20 @@ export default function ShoppApp() {
         getAllProduct()
         getAllProductFormLocal()
     },[])
-
+  
     const filterByCategory = () => {
         switch (categoryItem) {
-            case "all":
+            case "All":
                 setProductByCate(allProduct.filter(item => item.typeAll == "All"))
+                console.log('ALLL')
                 break
             case categoryItem:
                 setProductByCate(allProduct.filter(item => item.type == categoryItem))
+                console.log(categoryItem)
                 break
         }
     }
-    console.log(productBycate)
+
     return (
         <BrowserRouter>
             <div className="shop_app">
@@ -63,7 +66,8 @@ export default function ShoppApp() {
                         categoryItem={categoryItem}
                         setCategoryItem={setCategoryItem}
                         filterByCategory={filterByCategory} />}></Route>
-                        <Route path="/itemDetail/:itemName" element={<ItemDetail amount = {amount} inCrease = {inCrease} deCrease = {deCrease}/>}></Route>
+                    <Route path="/itemDetail/:itemName" element={<ItemDetail amount = {amount} inCrease = {inCrease} deCrease = {deCrease}/>}></Route>
+                    <Route path="/product/:name" element = {<ProductPage category={category}/>}></Route>    
                 </Routes>
                 <Footer />
             </div>

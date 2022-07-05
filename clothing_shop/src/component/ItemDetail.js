@@ -6,7 +6,6 @@ import "../css/itemdetail.css"
 export default function ItemDetail({amount,inCrease,deCrease}) {
     const { itemName } = useParams()
     const [itemDetail, setItemDetail] = useState([])
-
     useEffect(() => {
         const detail = getItem(itemName)
         setItemDetail(detail)

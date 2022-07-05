@@ -100,7 +100,8 @@
        flex-direction: column;
        justify-content: center;
        align-items: center;
-       gap:15px; 
+       gap:15px;
+       margin-top: 10px; 
 }
 .category_list{
     display: flex;
@@ -195,4 +196,14 @@
 }
 .display-none{
     display: none;
+}
+.link-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.link-item:hover h1{
+    color: black;
 }
